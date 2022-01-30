@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Demo-2 CRUD</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css"/>
+
+
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+        
+        
+        <div>
+            <ul >
+              <li>
+                <a id="change" style="font-weight:bold;"  href="http://localhost:8080/">Home</span></a>
+              </li>
+            
+              <span style="float: right;">
+                <li class="nav-item">
+                  <form th:action="@{/userDetails/}" method="post">
+                  <button type="submit" class="btn1">Users Details </button>
+                  </form>
+                </li>
+                
+                
+          
+                <li style="float:right; padding-right: 20px;">
+                  <span th:text="'Hello, '+ ${users}" style="padding-right: 20px;"></span>
+                  <a id="change" class="nav-link" href="http://localhost:8080/logout">Sign Out</a>
+                </li>
+              </span>
+            </ul>
+          </div>
+       
+          
+        </nav>
+        <div class="back">
+        <br>
+        <h2 class="add1">Add User</h2>
+        <br>
+<form th:object="${userNew}" method="post" th:action="@{/saveUser/}" class="add">
+    <input type="hidden" th:field="*{id}" />
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="username" th:field="*{username}"/>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="text" name="password" th:field="*{password}"/>
+    </div>
+    <div class="form-group">
+        <label>User Type</label>
+        <select name="TYPE" th:field="*{role}">
+            <option value="ADMIN">ADMIN</option>
+            <option value="USER" >USER</option>
+          </select>
+        </div>
+    <div class="form-group">
+        <button type="submit" class="btn2 btn-primary">Submit</button>
+    </div>
+</form>
+</div>
+</body>
+</html>

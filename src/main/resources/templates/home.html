@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Demo-2 CRUD</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body id="img" style=" width: 100%; ">
+
+
+
+    <nav class="navbar">
+        
+        
+        <div>
+            <ul >
+              <li>
+                <a id="change" style="font-weight:bold;"  href="http://localhost:8080/">Home</span></a>
+              </li>
+             
+              <span style="float: right;">
+              <li class="nav-item">
+                <form th:action="@{/userDetails/}" method="post">
+                <button type="submit" class="btn1">Users Details </button>
+                </form>
+              </li>
+              
+              
+        
+              <li style="float:right; padding-right: 20px;">
+                <span th:text="'Hello, '+ ${user}" style="padding-right: 20px;"></span>
+                <a id="change" class="nav-link" href="http://localhost:8080/logout">Sign Out</a>
+              </li>
+            </span>
+            </ul>
+          </div>
+       
+          
+        </nav>
+        <div class="back">
+        <br>
+        <br>
+        
+    <h2>Course Details</h2>
+        
+    <table class="center" >
+        <thead>
+            <th>Id</th>
+            <th>Student Name</th>
+            <th>Course Id</th>
+            <th>Course Name</th>
+            <th >Methods</th>
+            
+        </thead>
+
+        <tbody>
+            <th:block th:each="course : ${Course}">
+            <tr>
+                <td th:text="${course.id}"></td>
+                <td th:text="${course.studentName}"></td>
+                <td th:text="${course.courseId}"></td>
+                <td th:text="${course.courseName}"></td>
+                <td style="text-align: center;">
+                <form th:action="@{'/edit/'} + ${course.id}">
+                <button type="submit" class="btn fa fa-edit" >Edit</button>
+                </form>
+                <form th:action="@{'/del/'} + ${course.id}">
+                <button type="submit" class="btn fa fa-trash-o">Delete</button>
+                </form>
+            </td>
+                
+            </tr>
+            
+        </th:block>
+        </tbody>
+       
+    </table>
+    <br>
+    <div style="text-align: center;">
+      <form th:action="@{/addCourse/}">
+      <button type="submit" class="btn2">Add Course </button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

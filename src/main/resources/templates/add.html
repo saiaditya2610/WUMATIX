@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Demo-2 CRUD</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css"/>
+
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+        
+        
+        <div>
+            <ul >
+              <li>
+                <a id="change" style="font-weight:bold;"  href="http://localhost:8080/">Home</span></a>
+              </li>
+            
+              <span style="float: right;">
+                <li class="nav-item">
+                  <form th:action="@{/userDetails/}" method="post">
+                  <button type="submit" class="btn1">Users Details </button>
+                  </form>
+                </li>
+                
+                
+          
+                <li style="float:right; padding-right: 20px;">
+                  <span th:text="'Hello, '+ ${user}" style="padding-right: 20px;"></span>
+                  <a id="change" class="nav-link" href="http://localhost:8080/logout">Sign Out</a>
+                </li>
+              </span>
+            </ul>
+          </div>
+       
+          
+        </nav>
+        <div class="back">
+        <br>
+        <br>
+        <h2 class="add1" >Add Course </h2>
+<form th:object="${COURSE}" method="post" th:action="@{/saveItem}" class="add col cen">
+    <input type="hidden" th:field="*{id}" name="id" />
+    <div class="form-group" style="margin-top: 20px; margin-bottom: 20px;">
+        <label >Student Name</label>
+        <input type="text" id="studentName" name="studentName" th:field="*{studentName}"/>
+        <span class="err add" th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}"></span>
+    </div>
+    <div class="form-group"style="margin-top: 20px; margin-bottom: 20px;">
+        <label>Course Name</label>
+        <input type="text" id="courseName" name="courseName" th:field="*{courseName}"/>
+        <span class="err add" th:if="${#fields.hasErrors('courseName')}" th:errors="*{courseName}"></span>
+    </div>
+    <div class="form-group" style="margin-top: 20px; margin-bottom: 20px;">
+        <label>Course Id</label>
+        <input type="text" id="courseId" name="courseId" th:field="*{courseId}"/>
+        <span class="err add" if="${#fields.hasErrors('courseId')}" th:errors="*{courseId}">Errors</span>
+    </div>
+    <div class="form-group" style="margin-top: 20px; margin-bottom: 20px;">
+        <button type="submit" class="btn2 btn-primary">Submit</button>
+    </div>
+
+</div>
+</form>
+</body>
+</html>

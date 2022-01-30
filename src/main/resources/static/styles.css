@@ -1,0 +1,178 @@
+
+span {
+    text-decoration: none;
+    color: #231F20;
+   
+}
+
+.btn1{
+    text-decoration: none;
+    color: cyan;
+    font-weight:bolder;
+    background-color: transparent;
+    border:none;
+    padding:0;
+    font-size: 20px;
+    color:rgb(17, 15, 15);
+
+}
+a{
+    text-decoration: none;
+    font-weight: bolder;
+    color:black;
+
+}
+
+h2{
+    color: #231F20;
+    font-weight:bolder;
+    text-align: center;
+    padding-right: 30px;
+}
+.back{
+    background-image: url("/back.jpg");
+    background-position: center center;
+
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0px;
+    margin: 0px;
+   
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+#change:hover, .btn1:hover{
+    background-color:black;
+    color:white;
+}
+
+table{
+    
+    border-collapse:collapse;
+    width: 1000px;
+    
+}
+table,td,th{
+    border: 1px solid white;
+}
+
+
+table{
+    background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.3); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+}
+
+.btn{
+    border: 1px solid burlywood;
+
+    
+}
+.btn:hover{
+    background-color:white;
+    color:black;
+}
+
+.btn-warning {
+    background-color:gold;
+    color:black;
+    
+    
+}
+
+.btn-danger{
+    background-color:rgb(255, 0, 0);
+    color:black;
+}
+
+.btn-primary{
+    background-color: aquamarine;
+    color:black;
+}
+
+body{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+.navbar{
+    height:70px;
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 20px;
+    background-color: white;
+
+}
+ul {
+    list-style-type: none;
+    margin-top: 5px;
+    margin-left:5px;
+    margin-bottom: 5px;
+    
+   
+  }
+
+li{
+    display: inline-block;
+    float: left;
+    margin-top: 5px;
+    margin-left:5px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+
+
+
+}
+
+.form-group{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.err{
+    font-size: 10px;
+    color: red;
+
+}
+
+.btn2{
+    border: none;
+    color:wheat;
+    background: rgba(0, 0, 0, 0.3); 
+    font-size: 15px;
+    padding: 16px 32px;
+    border-radius: 16px;
+}
+
+.btn2:hover{
+    color:black;
+    background-color: white;
+
+}
+
+.fa{
+    background: rgba(0, 0, 0, 0.3); 
+    color:#f1f1f1;
+    border: 0px;
+}
+
+.add{
+    font-size: 20px;
+}
+
+.col{
+    color:white;
+}
+
+.add1{
+    color:antiquewhite;
+    text-align: left;
+    font-size: 30px;
+
+
+}
