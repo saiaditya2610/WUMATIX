@@ -28,7 +28,7 @@ public class Course {
     @Pattern(regexp = "[0-9]+")
     public String courseId;
 
-    @Pattern(regexp = "[a-zA-z]+")
+    @Pattern(regexp = "[a-zA-z ]+")
     @NotEmpty(message = "Name cannot be empty")
     public String studentName;
 

@@ -4,6 +4,8 @@ import com.example.demo.Component.MyUserDetails;
 import com.example.demo.beans.User;
 import com.example.demo.repository.UserRepository;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,9 +13,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 
+
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 
+    private static final Logger log=LoggerFactory.getLogger(MyUserDetailsService.class);
 
     public UserRepository userrepo;
 
@@ -24,12 +28,14 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        
+        log.warn("About to Authenicate");
         User user=userrepo.findByUsername(username);
         if(user==null)
         {
+            log.error("User Not Found");
             throw new UsernameNotFoundException("User not found");
         }
+        log.info("Success");
 
         return new MyUserDetails(user);
     }
