@@ -51,6 +51,9 @@ xmlns:th="http://www.thymeleaf.org">
                 <th>Id</th>
                 <th>Username</th>
                 <th>Type</th>
+               
+                <th>MAILID</th>
+                <th>PROVIDER</th>
                 <th>Delete</th>
                 
             </thead>
@@ -61,9 +64,14 @@ xmlns:th="http://www.thymeleaf.org">
                     <td th:text="${User.id}"></td>
                     <td th:text="${User.username}"></td>
                     <td th:text="${User.role}"></td>
+                    
+                    
+                    
+                    <td th:text="${User.mail}"></td>
+                    <td th:text="${User.provider}"></td>
                     <td style="text-align: center;">
                     <form th:action="@{'/delUser/'+ ${User.id}}">
-                    <button type="submit" class="btn fa fa-trash-o btn-danger" >Delete</button>
+                      <button type="submit" class="btn fa fa-trash-o btn-danger" >Delete</button>
                     </form>
                    </td>
                     

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -31,6 +32,11 @@ public class Course {
     @Pattern(regexp = "[a-zA-z ]+")
     @NotEmpty(message = "Name cannot be empty")
     public String studentName;
+
+  
+
+
+
 
 
     public String getStudentName() {

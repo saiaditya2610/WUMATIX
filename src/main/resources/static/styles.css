@@ -62,9 +62,9 @@ table,td,th{
 
 
 table{
-    background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.3); /* Black background with 0.5 opacity */
-  color: #f1f1f1; /* Grey text */
+    background: rgb(0, 0, 0); 
+  background: rgba(0, 0, 0, 0.3); 
+  color: #f1f1f1; 
 }
 
 .btn{

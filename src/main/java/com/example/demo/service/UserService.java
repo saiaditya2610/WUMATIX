@@ -11,4 +11,5 @@ public interface UserService {
     public ResponseEntity<List<User>> getAllUsers();    
     public ResponseEntity<String> deleteUser(Long id);
     public ResponseEntity<String> saveUser(User user);
+    public List<User> getMailId(String mail);
 }

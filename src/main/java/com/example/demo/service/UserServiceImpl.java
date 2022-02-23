@@ -54,6 +54,12 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public List<User> getMailId(String mail) {
+       
+        return userrepo.findByMail(mail);    
+    }
+    
    
     
 }

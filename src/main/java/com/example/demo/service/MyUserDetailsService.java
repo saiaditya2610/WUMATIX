@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import com.example.demo.Component.MyUserDetails;
 import com.example.demo.beans.User;
 import com.example.demo.repository.UserRepository;
@@ -29,15 +31,15 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         log.warn("About to Authenicate");
-        User user=userrepo.findByUsername(username);
-        if(user==null)
+        List<User> user=userrepo.findByMail(username);
+        if(user.isEmpty())
         {
             log.error("User Not Found");
             throw new UsernameNotFoundException("User not found");
         }
         log.info("Success");
 
-        return new MyUserDetails(user);
+        return new MyUserDetails(user.get(0));
     }
     
 }
